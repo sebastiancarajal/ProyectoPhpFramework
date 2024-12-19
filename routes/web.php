@@ -1,6 +1,6 @@
 <?php
 
-    
+
 //Instaciamos a la carpeta donde creamos la clase
 //require_once '../lib/route.php';
 
@@ -9,16 +9,29 @@
 
 use Lib\Route;
 
-Route::get('/',function(){
-    echo "Hola desde la pagina principal";
+use App\Controllers\HomeController;
+
+
+Route::get('/', [HomeController::class,'index']);
+
+Route::get('/contact', function () {
+    return "Hola desde la pagina de contacto";
 });
 
-Route::get('/contact',function(){
-    echo "Hola desde la pagina de contacto";
+Route::get('/about', function () {
+    return "Hola desde la pagina acera de el";
 });
 
-Route::get('/about',function(){
-    echo "Hola desde la pagina acera de el";
+Route::get('/courses/:prueba', function () {
+    return "Hola desde curso de prueba";
 });
+
+
+//Defino la ruta metodo get para poder recuperarlo, donde pongo :slug es para poder colocar lo que capturamos
+Route::get('/courses/:slug', function ($slug) {
+    return "El valor de slug " . $slug;
+});
+
+
 
 Route::dispatch();
