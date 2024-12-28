@@ -1,29 +1,14 @@
 <?php
 namespace App\Controllers;
 
-
-
-class HomeController
+class HomeController extends ViewController 
 {
     public function index()
     {
-        return $this->view('home');
+        return $this->view('home',[
+                'title'=> 'Home',
+                'description' => 'Esta es la pagina home'
+        ]);
     }
 
-    public function view($route){
-
-            
-
-        
-        if(file_exists("../resouces/views/{$route}.php")){
-            
-            ob_start();
-            return include "../resouces/views/{$route}.php";
-            $content = ob_get_clean();
-            return $content;
-        }
-        else{
-            return "el arvhico no existe";
-        }
-    }
 }

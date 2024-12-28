@@ -1,5 +1,7 @@
 <?php
+use Lib\Route;
 
+use App\Controllers\HomeController;
 
 //Instaciamos a la carpeta donde creamos la clase
 //require_once '../lib/route.php';
@@ -7,9 +9,7 @@
 
 //Instaciamos al nombre que le pusimso en el namepace, luego hacemos uso de la calse Route para poder realizar las funciones
 
-use Lib\Route;
 
-use App\Controllers\HomeController;
 
 
 Route::get('/', [HomeController::class,'index']);
