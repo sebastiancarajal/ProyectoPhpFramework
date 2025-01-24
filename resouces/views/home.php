@@ -7,5 +7,8 @@
 </head>
 <body>
     <h1>Hola desde la pagina de Home </h1>
+
+    <p>Titulo <?php echo $title?></p>
+    <p>Description <?php echo $description?></p>
 </body>
 </html>
